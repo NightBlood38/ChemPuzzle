@@ -9,6 +9,7 @@ const addOxygen = document.getElementById("addOxygen")
 const listOfMolecules = document.getElementById("listOfMolecules");
 const listElements = [document.getElementById("1"),document.getElementById("2"),document.getElementById("3"),document.getElementById("4"),document.getElementById("5")];
 const won = document.getElementById("won");
+const github = document.getElementById("github")
 
 const metan = {
     name:"metán",
@@ -546,11 +547,13 @@ canvas.addEventListener("mouseup", (e) => {
 //játék elindítása
 function startGame(){
     start.style.display = "none";
+    github.style.display = "none";
     startTimer();
     randomMolecules();
     enableUI();
     isGameRunning = true;
 }
+//kötések megnézése
 function checkBonds() {
     bonds = [];
 
@@ -659,3 +662,6 @@ function checkMolecule(){
     });
     isComplete();
 }
+github.addEventListener("click", () =>{
+    open("https://github.com/NightBlood38/ChemPuzzle", "_blank");
+})
