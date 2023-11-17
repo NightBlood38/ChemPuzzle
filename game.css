@@ -1,0 +1,124 @@
+
+body {
+    margin: 0;
+    overflow: hidden;
+    background-image: url("./background_opaque.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.canvas-container {
+    position: relative;
+}
+
+canvas {
+    border: 1px solid #000;
+    display: block;
+    margin: 7% auto;
+    background-image: url("./canvas_background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+button#start {
+    background-color: green;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px 50px;
+    font-weight: bold;
+}
+button#start:hover{
+    background-color: rgb(0, 61, 0);
+    color: rgb(92, 92, 92)
+}
+
+button#addCarbon{
+    display:none;
+    position: absolute;
+    left:90%;
+    bottom: 70%;
+    background-color: black;
+    color: white;
+    padding: 20px 39px;
+    font-weight: bold;
+
+}
+button#addCoal:hover{
+    background-color: #2d2d2d;
+    
+}
+
+button#addHydrogen{
+    display:none;
+    position: absolute;
+    left:90%;
+    bottom: 50%;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    padding: 20px 25px;
+    font-weight: bold;
+    border-color: black;
+
+}
+button#addHydrogen:hover{
+    background-color: #989898;
+}
+
+button#addOxygen{
+    display:none;
+    position: absolute;
+    left:90%;
+    bottom: 30%;
+    background-color: red;
+    color: rgb(0, 0, 0);
+    padding: 20px 32px;
+    font-weight: bold;
+}
+button#addOxygen:hover{
+    background-color: rgb(119, 0, 0);
+}
+
+ol{
+    display:none;
+    position: absolute;
+    bottom:38%;
+    left: 3%;
+    font-weight: bold;
+    font-size: 40px;
+    color: black;
+    -webkit-text-stroke: 1px white;
+    
+}
+li{
+    padding-bottom: 10px;
+}
+
+span{
+    bottom: -20%;
+    left:42%;
+    position: absolute;
+    color: black;
+    font-weight: bold;
+    font-size: 100px;
+    display: none;
+}
+@media (max-width: 1550px){
+    p#won{
+        color:green;
+        font-size: 200px;
+        position: absolute;
+        bottom: 10%;
+        left: 20%;
+    }
+}
+p#won{
+    color:green;
+    font-size: 200px;
+    position: absolute;
+    display:none;
+    bottom: 25%;
+    left: 26%;
+}   

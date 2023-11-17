@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Kémia puzzle</title>
+        <link href="game.css" rel="stylesheet">
+    </head>
+    <body>
+        
+        <div class="canvas-container">
+            <canvas id="canvas" width="1000" height="500"></canvas>
+            <button id="start">Start</button>
+            <span id="timer">00:00</span>
+        </div>
+        <button id = "addCarbon" class="addButton">Szén</button>
+        <button id = "addHydrogen" class="addButton">Hidrogén</button>
+        <button id="addOxygen" class="addButton">Oxigén</button>
+        <ol id="listOfMolecules">
+            <li id="1"></li>
+            <li id="2"></li>
+            <li id="3"></li>
+            <li id="4"></li>
+            <li id="5"></li>
+        </ol>
+        <p id="won">NYERTÉL</p>
+        <script src="game.js"></script>
+    </body>
+</html>
