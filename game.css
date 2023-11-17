@@ -166,6 +166,9 @@ span{
     font-size: 100px;
     display: none;
 }
+span::selection{
+    text-decoration: none;
+}
 @media (max-width: 1550px){
     p#won{
         color:green;
