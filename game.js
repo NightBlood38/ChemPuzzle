@@ -14,6 +14,7 @@ const leaderboardButton = document.getElementById("leaderboardButton");
 const back = document.getElementById("back");
 const leaderboard =document.getElementById("leaderboard");
 const leaderboardP = document.getElementById("leaderboardP");
+const help = document.getElementById("help");
 
 const metan = {
     name:"metán",
@@ -598,6 +599,27 @@ addOxygen.addEventListener("click", () => {
     objectArr.push(oxygen);
     draw();
 });
+github.addEventListener("click", () =>{
+    open("https://github.com/NightBlood38/ChemPuzzle", "_blank");
+});
+leaderboardButton.addEventListener("click", () => {
+    disalbleStartMenu();
+    back.style.display = "block";
+    leaderboard.style.display = "block";
+    leaderboardP.style.display = "block";
+});
+back.addEventListener("click", () =>{
+    github.style.display = "block";
+    leaderboardButton.style.display = "block";
+    start.style.display = "block";
+    help.style.display = "block";
+    back.style.display = "none";
+    leaderboard.style.display = "none";
+    leaderboardP.style.display = "none";
+})
+help.addEventListener("click", () =>{
+    open("help.html");
+})
 
 function deleteAtom(atom){
     objectArr = objectArr.filter(obj => obj !== atom);
@@ -634,6 +656,7 @@ function disalbleStartMenu(){
     github.style.display = "none";
     start.style.display = "none";
     leaderboardButton.style.display = "none";
+    help.style.display = "none";
 }
 
 //molekula ellenőrzése
@@ -673,20 +696,3 @@ function checkMolecule(){
     });
     isComplete();
 }
-github.addEventListener("click", () =>{
-    open("https://github.com/NightBlood38/ChemPuzzle", "_blank");
-});
-leaderboardButton.addEventListener("click", () => {
-    disalbleStartMenu();
-    back.style.display = "block";
-    leaderboard.style.display = "block";
-    leaderboardP.style.display = "block";
-});
-back.addEventListener("click", () =>{
-    github.style.display = "block";
-    leaderboardButton.style.display = "block";
-    start.style.display = "block";
-    back.style.display = "none";
-    leaderboard.style.display = "none";
-    leaderboardP.style.display = "none";
-})

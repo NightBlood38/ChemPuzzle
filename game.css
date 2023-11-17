@@ -24,7 +24,7 @@ button#start {
     background-color: green;
     color: white;
     position: absolute;
-    top: 35%;
+    top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 15px 50px;
@@ -38,7 +38,7 @@ button#leaderboardButton{
     background-color: yellow;
     color: rgb(0, 0, 0);
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 15px 35px;
@@ -52,13 +52,27 @@ button#github{
     background-color: yellow;
     color: rgb(0, 0, 0);
     position: absolute;
-    top: 65%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 15px 43px;
     font-weight: bold;
 }
 button#github:hover{
+    background-color: rgb(122, 122, 0);
+    color: rgb(172, 185, 58);
+}
+button#help{
+    background-color: yellow;
+    color: rgb(0, 0, 0);
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px 37px;
+    font-weight: bold;
+}
+button#help:hover{
     background-color: rgb(122, 122, 0);
     color: rgb(172, 185, 58);
 }
