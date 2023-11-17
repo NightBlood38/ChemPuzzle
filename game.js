@@ -9,7 +9,11 @@ const addOxygen = document.getElementById("addOxygen")
 const listOfMolecules = document.getElementById("listOfMolecules");
 const listElements = [document.getElementById("1"),document.getElementById("2"),document.getElementById("3"),document.getElementById("4"),document.getElementById("5")];
 const won = document.getElementById("won");
-const github = document.getElementById("github")
+const github = document.getElementById("github");
+const leaderboardButton = document.getElementById("leaderboardButton");
+const back = document.getElementById("back");
+const leaderboard =document.getElementById("leaderboard");
+const leaderboardP = document.getElementById("leaderboardP");
 
 const metan = {
     name:"metán",
@@ -546,8 +550,7 @@ canvas.addEventListener("mouseup", (e) => {
 });
 //játék elindítása
 function startGame(){
-    start.style.display = "none";
-    github.style.display = "none";
+    disalbleStartMenu();
     startTimer();
     randomMolecules();
     enableUI();
@@ -610,6 +613,7 @@ function draw() {
     });
     drawX();
 }
+
 //játék befejezése
 function isComplete(){
     if(checklist.length == 0 && isGameRunning){
@@ -625,6 +629,13 @@ function disableUI(){
     listOfMolecules.style.display = "none";
     addOxygen.style.display = "none";
 }
+
+function disalbleStartMenu(){
+    github.style.display = "none";
+    start.style.display = "none";
+    leaderboardButton.style.display = "none";
+}
+
 //molekula ellenőrzése
 function checkMolecule(){
     chAmount = 0;
@@ -664,4 +675,18 @@ function checkMolecule(){
 }
 github.addEventListener("click", () =>{
     open("https://github.com/NightBlood38/ChemPuzzle", "_blank");
+});
+leaderboardButton.addEventListener("click", () => {
+    disalbleStartMenu();
+    back.style.display = "block";
+    leaderboard.style.display = "block";
+    leaderboardP.style.display = "block";
+});
+back.addEventListener("click", () =>{
+    github.style.display = "block";
+    leaderboardButton.style.display = "block";
+    start.style.display = "block";
+    back.style.display = "none";
+    leaderboard.style.display = "none";
+    leaderboardP.style.display = "none";
 })

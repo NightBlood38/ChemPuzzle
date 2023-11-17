@@ -24,7 +24,7 @@ button#start {
     background-color: green;
     color: white;
     position: absolute;
-    top: 40%;
+    top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 15px 50px;
@@ -32,13 +32,27 @@ button#start {
 }
 button#start:hover{
     background-color: rgb(0, 61, 0);
-    color: rgb(92, 92, 92)
+    color: rgb(92, 92, 92);
+}
+button#leaderboardButton{
+    background-color: yellow;
+    color: rgb(0, 0, 0);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px 35px;
+    font-weight: bold;
+}
+button#leaderboardButton:hover{
+    background-color: rgb(122, 122, 0);
+    color: rgb(172, 185, 58);
 }
 button#github{
     background-color: yellow;
     color: rgb(0, 0, 0);
     position: absolute;
-    top: 55%;
+    top: 65%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 15px 43px;
@@ -46,7 +60,22 @@ button#github{
 }
 button#github:hover{
     background-color: rgb(122, 122, 0);
-    color: rgb(92, 92, 92)
+    color: rgb(172, 185, 58);
+}
+button#back{
+    display: none;
+    background-color: yellow;
+    color: rgb(0, 0, 0);
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px 43px;
+    font-weight: bold;
+}
+button#back:hover{
+    background-color: rgb(122, 122, 0);
+    color: rgb(172, 185, 58);
 }
 
 button#addCarbon{
@@ -95,7 +124,7 @@ button#addOxygen:hover{
     background-color: rgb(119, 0, 0);
 }
 
-ol{
+ol#listOfMolecules{
     display:none;
     position: absolute;
     top:20%;
@@ -106,8 +135,26 @@ ol{
     -webkit-text-stroke: 1px white;
     
 }
+ol#leaderboard{
+    display: none;
+    position: absolute;
+    top:20%;
+    left: 40%;
+    font-weight: bold;
+    font-size: 40px;
+    color: black;
+}
 li{
     padding-bottom: 10px;
+}
+p#leaderboardP{
+    display: none;
+    position: absolute;
+    top:10%;
+    left: 45%;
+    font-weight: bold;
+    font-size: 40px;
+    color: black;
 }
 
 span{
