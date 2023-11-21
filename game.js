@@ -313,6 +313,7 @@ class Hydrogen extends Atom {
         ctx.font = this.font;
         ctx.fillStyle = this.color;
         ctx.strokeStyle = this.borderColor;
+        ctx.lineWidth = 2;
 
         //elektron pozíció frissítés
         for (const electron of this.electrons) {
@@ -480,7 +481,7 @@ function enableUI(){
 function drawX(){
 
       ctx.strokeStyle = 'red';
-      ctx.lineWidth = 2;
+      ctx.lineWidth = 10;
 
       ctx.beginPath();
       ctx.moveTo(950, 450);
