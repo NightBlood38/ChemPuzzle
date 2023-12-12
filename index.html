@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kémia puzzle Bejelentkezés</title>
+    <link href="styleLogin.css" rel="stylesheet">
+</head>
+<body>
+    <div class="register">
+        <form method="POST" action="login.php" id="loginForm">
+            <div id="errorMessage" style="color: red;"></div>
+            <label for="username">Felhasználónév</label><br>
+            <input type="text" name="username" id="nameL" placeholder="name" required><br>
+            <label for="password">Jelszó</label><br>
+            <input type="password" name="password" id="passwordL" placeholder="password" required><br>
+            <input class="button" type="button" id="loginButton" value="Login" onclick="submitForm()">
+            <a href="register.html">Regisztráció</a>
+        </form>
+    </div>
+    <script src="loginScript.js"></script>
+</body>
+</html>

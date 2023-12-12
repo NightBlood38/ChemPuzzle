@@ -152,8 +152,8 @@ ol#listOfMolecules{
 ol#leaderboard{
     display: none;
     position: absolute;
-    top:20%;
-    left: 40%;
+    top:30%;
+    left: 42.5%;
     font-weight: bold;
     font-size: 40px;
     color: black;
@@ -164,7 +164,7 @@ li{
 p#leaderboardP{
     display: none;
     position: absolute;
-    top:10%;
+    top:20%;
     left: 45%;
     font-weight: bold;
     font-size: 40px;
@@ -200,8 +200,11 @@ p#won{
     bottom: 25%;
     left: 26%;
 }   
-a{
-    position: absolute;
-    left: 95%;
-    top: 95%;
+h1#welcome{
+    padding: 0;
+    margin: auto
+}
+a#logout{
+    margin-left: 5px;
+    color: red;
 }

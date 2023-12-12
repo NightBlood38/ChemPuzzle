@@ -1,4 +1,3 @@
-//minden kötésnél eltárolom azt a 2 objektumot, ami között létrejött a kötés, stringet csinálok belőlük, és egy tömbbe teszem
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 const start = document.getElementById("start");
@@ -15,6 +14,30 @@ const back = document.getElementById("back");
 const leaderboard =document.getElementById("leaderboard");
 const leaderboardP = document.getElementById("leaderboardP");
 const help = document.getElementById("help");
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    fetch('welcome.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network Error');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log(data);
+        document.getElementById("welcome").innerHTML = "Üdvözöllek " + data[0].username;
+    })
+    .catch(error => {
+        console.error('Fetch error:', error);
+    });
+});
+
 
 const metan = {
     name:"metán",
@@ -122,7 +145,7 @@ const dietil_eter = {
     cc:2
 };
 
-const molecules = [metan,etan,butan,propan,pentan,hexan,heptan,octan,nonan,decan,metanol,etanol,propanol,dimetil_eter,dietil_eter];
+const molecules = [metan,propan,pentan,hexan,heptan,octan,nonan,decan,propanol,etan,butan,metanol,etanol,dimetil_eter,dietil_eter];
 let minutes = 0;
 let seconds = 0;
 let totalTime = 0;
@@ -608,6 +631,31 @@ leaderboardButton.addEventListener("click", () => {
     back.style.display = "block";
     leaderboard.style.display = "block";
     leaderboardP.style.display = "block";
+    fetch('getLowestValues.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network Error');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log(data);
+        
+        data.forEach((value,i) => {
+            dataMinutes = Math.floor(value.best_time/60);
+            dataSeconds = value.best_time%60;
+            leaderboard.children[i].innerHTML = value.username + ": " +  `${dataMinutes.toString().padStart(2, '0')}:${dataSeconds.toString().padStart(2, '0')}`;
+        });
+    })
+    .catch(error => {
+        console.error('Fetch error:', error);
+    });
+    
 });
 back.addEventListener("click", () =>{
     github.style.display = "block";
@@ -643,8 +691,31 @@ function isComplete(){
         disableUI();
         stopTimer();
         won.style.display = "block";
+        const url = 'sendTime.php';
+        const data = totalTime
+
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: 'best_time=' + encodeURIComponent(data),
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                console.log(data);
+            })
+            .catch(error => {
+                console.error('Fetch error:', error);
+            });
+        }
     }
-}
+
 //UI eltűntetése
 function disableUI(){
     addCarbon.style.display = "none";
